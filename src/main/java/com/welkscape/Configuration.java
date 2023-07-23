@@ -34,7 +34,7 @@ public class Configuration {
 	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
 
-	public static final String CLIENT_TITLE =  Configuration.LIVE_SERVER ? "YourServerName" : "YourServerName";
+	public static final String CLIENT_TITLE =  Configuration.LIVE_SERVER ? "WelkScape" : "WelkScape";
 	public static Boolean DUMP_DATA = false;
 	public static int dumpID = 149;
 	public static Boolean DUMP_OTHER = false;

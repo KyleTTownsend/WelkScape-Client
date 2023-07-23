@@ -906,7 +906,7 @@ public class Client extends RSApplet {
 			setHighMem();
 			isMembers = true;
 			Signlink.storeid = 32;
-			Signlink.startpriv(InetAddress.getLocalHost());
+			Signlink.startpriv(InetAddress.getByName(server));
 			initClientFrame(currentScreenMode.getWidth(), currentScreenMode.getHeight());
 			instance = this;
 			GroundItemColors.loadGroundItems();
@@ -3771,7 +3771,7 @@ public class Client extends RSApplet {
 			setHighMem();
 			isMembers = true;
 			Signlink.storeid = 32;
-			Signlink.startpriv(InetAddress.getLocalHost());
+			Signlink.startpriv(InetAddress.getByName(server));
 			instance = new ClientWindow(args);
 		} catch (Exception exception) {
 		}
@@ -8921,7 +8921,9 @@ public class Client extends RSApplet {
 				drawLoginScreen(true);
 			}
 			setConfigButton(23103, informationFile.isRememberRoof() ? true : false);
-			socketStream = new RSSocket(this, openSocket(port + portOff));
+
+			Socket socket = openSocket(port+portOff);
+			socketStream = new RSSocket(this, socket);
 			long l = TextClass.longForName(s);
 			int i = (int) (l >> 16 & 31L);
 			stream.currentOffset = 0;
@@ -9247,7 +9249,8 @@ public class Client extends RSApplet {
 				// new UpdateClient().start();
 				return;
 			}
-		} catch (IOException _ex) {
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
 		} catch (Exception e) {
 			System.out.println("Error while generating uid. Skipping step.");
 			e.printStackTrace();
@@ -11222,7 +11225,7 @@ public class Client extends RSApplet {
 				anIntArray1229[pixelY - 1] = l7 - j7;
 			}
 			try {
-				macAddress = new MacAddress(InetAddress.getLocalHost()).toString();
+				macAddress = new MacAddress(InetAddress.getByName(server)).toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -18005,7 +18008,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = Configuration.LIVE_SERVER ? "127.0.0.1" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "65.27.175.252" : "65.27.175.252";
+	public static String server = Configuration.LIVE_SERVER ? "20.96.198.179" : "20.96.198.179"; //Configuration.LIVE_SERVER ? "65.27.175.252" : "65.27.175.252";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;
