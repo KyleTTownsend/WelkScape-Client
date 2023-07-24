@@ -119,7 +119,6 @@ public final class Signlink implements Runnable {
 		File file = null;
 		file = new File("src/main/resources/cache/");
 		if (file.exists() || file.mkdir()) {
-			System.out.println(file.getAbsolutePath());
 			return file.getAbsolutePath() + "/";
 		}
 		return null;
