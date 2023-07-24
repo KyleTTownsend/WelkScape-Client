@@ -930,6 +930,7 @@ public class Client extends RSApplet {
 		return new Socket(InetAddress.getByName(server), port);
 	}
 
+	
 	public boolean processMenuClick() {
 		if (activeInterfaceType != 0)
 			return false;
@@ -3771,7 +3772,6 @@ public class Client extends RSApplet {
 			setHighMem();
 			isMembers = true;
 			Signlink.storeid = 32;
-			Signlink.startpriv(InetAddress.getByName(server));
 			instance = new ClientWindow(args);
 		} catch (Exception exception) {
 		}
@@ -4677,8 +4677,7 @@ public class Client extends RSApplet {
 			experienceCounter = 0L;
 		}
 		if(l==852){//goon 
-			//launchURL("http://mysticps.everythingrs.com/services/heatmaps");
-			launchURL("https://oldschool.tools/world-map");
+			launchURL("https://welkscape.everythingrs.com/services/heatmaps");
 		}
 		if (l == 1850) {
 			stream.createFrame(185);
@@ -5094,6 +5093,8 @@ public class Client extends RSApplet {
 				stream.method431(i1);
 			}
 		}
+
+		//Handles Player Movement
 		if (l == 516) {
 			int y;
 			int x;
@@ -18008,7 +18009,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = Configuration.LIVE_SERVER ? "20.96.198.179" : "20.96.198.179"; //Configuration.LIVE_SERVER ? "65.27.175.252" : "65.27.175.252";
+	public static String server = Configuration.LIVE_SERVER ? "20.96.198.179" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "65.27.175.252" : "65.27.175.252";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;

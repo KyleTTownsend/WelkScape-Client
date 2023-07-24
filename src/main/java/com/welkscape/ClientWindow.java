@@ -53,7 +53,6 @@ public class ClientWindow extends Client implements ActionListener {
 	public ClientWindow(String args[]) {
 		super();
 		try {
-			com.welkscape.sign.Signlink.startpriv(InetAddress.getByName(server));
 			initUI();
 		} catch (Exception ex) {
 			ex.printStackTrace();
