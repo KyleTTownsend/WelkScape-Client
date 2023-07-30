@@ -27,7 +27,6 @@ public class ClientWindow extends Client implements ActionListener {
 			} else {
 				userNameFrameTitle = "";
 			}
-				
 			icon = new ImageIcon(new URL("https://i.stack.imgur.com/KSnus.gif")).getImage();
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			JPopupMenu.setDefaultLightWeightPopupEnabled(false);

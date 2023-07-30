@@ -159,6 +159,7 @@ public final class Signlink implements Runnable {
 				dataoutputstream.close();
 			}
 		} catch (Exception _ex) {
+			System.out.println("error getting uid");
 		}
 		try {
 			DataInputStream datainputstream = new DataInputStream(

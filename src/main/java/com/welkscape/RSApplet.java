@@ -101,14 +101,14 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 				
 				RSInterface.interfaceCache[SettingsWidget.ZOOMTOGGLE].active = true;
 				
-				/*
+				
 				//this is commented out because settings[168] is nulling when a value is set to it.
 				try {
 					Client.instance.settings[168] = setting;
 				} catch (Exception e) {
 					System.out.println("Failed to set settings[168] to: "+setting);
 				}
-				*/
+				
 				RSInterface.interfaceCache[SettingsWidget.ZOOM_SLIDER].slider.setValue(Client.cameraZoom);
 			}
 		}

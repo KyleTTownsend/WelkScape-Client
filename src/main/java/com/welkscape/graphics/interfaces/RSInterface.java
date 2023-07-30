@@ -5509,6 +5509,7 @@ public class RSInterface {
 			sprite = new Sprite(s + " " + i);
 			aMRUNodes_238.removeFromCache(sprite, l);
 		} catch (Exception exception) {
+			System.out.println("Error loading image: " + s);
 			return null;
 		}
 		return sprite;

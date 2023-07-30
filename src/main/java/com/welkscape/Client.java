@@ -905,7 +905,6 @@ public class Client extends RSApplet {
 			portOff = 0;
 			setHighMem();
 			isMembers = true;
-			Signlink.storeid = 32;
 			Signlink.startpriv(InetAddress.getByName(server));
 			initClientFrame(currentScreenMode.getWidth(), currentScreenMode.getHeight());
 			instance = this;
@@ -3337,8 +3336,6 @@ public class Client extends RSApplet {
 			mainGameProcessor();
 
 		processOnDemandQueue();
-		// method49();
-		// handleSounds();
 	}
 
 	public void method47(boolean flag) {
@@ -4596,7 +4593,7 @@ public class Client extends RSApplet {
 		return NumberFormat.getInstance().format(number);
 	}
 
-	public int settings[];
+	public int settings[] = new int[1000];
 
 	private void updateSettings() {
 		settings[809] = Configuration.alwaysLeftClickAttack ? 1 : 0;
@@ -15739,24 +15736,6 @@ public class Client extends RSApplet {
 			if (component.parentID == tabInterfaceIDs[tabID])
 				needDrawTabArea = true;
 		}
-	}
-
-	public void sendFrame219() {
-		if (invOverlayInterfaceID != -1) {
-			invOverlayInterfaceID = -1;
-			needDrawTabArea = true;
-			tabAreaAltered = true;
-		}
-		if (backDialogID != -1) {
-			backDialogID = -1;
-			inputTaken = true;
-		}
-		if (inputDialogState != 0) {
-			inputDialogState = 0;
-			inputTaken = true;
-		}
-		openInterfaceID = -1;
-		aBoolean1149 = false;
 	}
 
 	public void sendFrame248(int interfaceID, int sideInterfaceID) {

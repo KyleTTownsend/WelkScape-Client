@@ -25,8 +25,8 @@ import com.welkscape.utilities.FileOperations;
 public final class ItemDefinition {
 	public byte[] customSpriteLocation;
 	public static void unpackConfig(final StreamLoader streamLoader) {
-		 stream = new Stream(streamLoader.getDataForName("obj.dat"));
-		 Stream stream = new Stream(streamLoader.getDataForName("obj.idx"));
+		stream = new Stream(streamLoader.getDataForName("obj.dat"));
+		Stream stream = new Stream(streamLoader.getDataForName("obj.idx"));
 		//stream = new Stream(FileOperations.readFile(Signlink.getCacheDirectory() + "/data/obj.dat"));
 		//final Stream stream = new Stream(FileOperations.readFile(Signlink.getCacheDirectory() + "/data/obj.idx"));
 
